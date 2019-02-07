@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+            <input type="radio" name="lol" id="lol" autocomplete="off"> lol
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="PUBG" id="PUBG" autocomplete="off"> PUBG
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="overwatch" id="overwatch" autocomplete="off"> overwatch
+        </label>
+    </div>
+    {% if id=="lol" %}
+    {{url}} = "https://www.op.gg/summoner/userName="
+    {% elif id=="PUBG" %}
+    {{url}} = "https://pubg.op.gg/user/"
+    {% elif id=="overwatch" %}
+    {{url}} = "https://overwatch.op.gg/search"
+    {% endif %}
+    <form action="{{url}}">
+        <input type="text" name="playerName">
+        <input type="submit">
+    </form>
+</body>
+</html>
